@@ -1,0 +1,23 @@
+<div class="list">
+    <form method="POST">
+        <div class="head-list">
+            <input type="text" name="item" placeholder="New Item">
+            <button type="submit" class="btn"><i class="fa-solid fa-plus"></i></button>
+            <div class="layer"></div>
+        </div>
+    </form>
+    <div class="body-list">
+        <ul class="items">
+            <%for (i in items) { %>
+            <li class="item">
+                <% if (items[i].done) { %>
+                    <input type="checkbox" checked class="check" >
+                <% } else { %>
+                    <input type="checkbox" class="check" >
+                <% } %>
+                <span class="<%= items[i].done ? "done" : "" %>"><%= items[i].item %></span>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</div>
